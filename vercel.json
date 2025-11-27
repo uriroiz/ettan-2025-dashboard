@@ -1,33 +1,5 @@
 {
-  "buildCommand": null,
-  "devCommand": null,
-  "installCommand": null,
-  "framework": null,
-  "outputDirectory": ".",
   "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/ettan-dashboard-ebr.html",
-      "destination": "/",
-      "permanent": false
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/ettan-dashboard-ebr.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    }
-  ]
+  "trailingSlash": false
 }
 
