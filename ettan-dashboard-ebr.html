@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Ettan 2025 - EBR Dashboard</title>
-    <!-- Version: 2025-11-27-v15 - Dynamic rounds display per season half -->
+    <!-- Version: 2025-11-27-v16 - Added Pixellot & Cursor logos to login -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <style>
@@ -388,12 +388,23 @@
         .coverage-high { background: rgba(0, 180, 216, 0.2); color: #00B4D8; }
         .coverage-medium { background: rgba(247, 184, 1, 0.2); color: #F7B801; }
         .coverage-low { background: rgba(255, 107, 53, 0.2); color: #FF6B35; }
+        
+        /* Login button hover effect */
+        #loginScreen button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 180, 216, 0.4);
+        }
+        
+        /* Logo hover effect */
+        #loginScreen .logo-container:hover {
+            opacity: 1 !important;
+        }
     </style>
 </head>
 <body>
     <!-- Login Screen -->
-    <div id="loginScreen" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%);">
-        <div style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 180, 216, 0.3); border-radius: 16px; padding: 40px; text-align: center; max-width: 400px; width: 90%;">
+    <div id="loginScreen" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2a2f4a 100%); padding: 20px;">
+        <div style="background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(0, 180, 216, 0.3); border-radius: 16px; padding: 40px; text-align: center; max-width: 450px; width: 90%;">
             <h1 style="font-size: 2.5rem; font-weight: 900; background: linear-gradient(135deg, #00B4D8 0%, #06FFA5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px;">ETTAN 2025</h1>
             <p style="color: #8B95A5; margin-bottom: 30px; font-size: 1.1rem;">EBR Dashboard - Sportway AB</p>
             <input type="password" id="passwordInput" placeholder="Enter Password" style="width: 100%; padding: 15px; background: rgba(0, 180, 216, 0.1); border: 2px solid rgba(0, 180, 216, 0.3); border-radius: 8px; color: #E0E6ED; font-size: 1rem; margin-bottom: 20px; text-align: center;" />
@@ -401,6 +412,25 @@
                 LOGIN
             </button>
             <p id="errorMessage" style="color: #E63946; margin-top: 15px; font-size: 0.9rem; display: none;">Incorrect password. Please try again.</p>
+            
+            <!-- Logos Section -->
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p style="color: #666; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Powered by</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
+                    <!-- Pixellot Logo -->
+                    <div class="logo-container" style="opacity: 0.7; transition: opacity 0.3s ease;">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iNDAiIGZpbGw9IiMwMDAiLz48dGV4dCB4PSI2MCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlBpeGVsbDx0c3BhbiBmaWxsPSIjMDBCNEQ4Ij5vdDwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==" alt="Pixellot" style="height: 32px; display: block;" />
+                    </div>
+                    <!-- Cursor Logo -->
+                    <div class="logo-container" style="opacity: 0.7; transition: opacity 0.3s ease;">
+                        <svg width="80" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="20,10 65,10 35,50" fill="#FF0558" opacity="0.9"/>
+                            <polygon points="35,50 80,90 35,90" fill="#FF0558" opacity="0.9"/>
+                        </svg>
+                    </div>
+                </div>
+                <p style="color: #555; font-size: 0.7rem; margin-top: 15px;">© 2025 Production Analytics Platform</p>
+            </div>
         </div>
     </div>
 
